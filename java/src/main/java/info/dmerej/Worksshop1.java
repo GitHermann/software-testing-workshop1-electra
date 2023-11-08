@@ -18,18 +18,16 @@ public class Worksshop1 {
     }
 
     public static void splitInput() {
-<<<<<<< HEAD
-        tokens = (ArrayList<String>) Arrays.asList(inputString.split(" "));
-        System.out.println(tokens);
-=======
+
         tokens = Arrays.asList(inputString.split(" "));
->>>>>>> f95a99435cb02c95f0cdaa666e54ed567d8bc62e
+
     }
 
     public static void readNextToken() {
         String token = null;
         try {
             token = tokens.remove(0);
+            System.out.println(token);
             Integer.parseInt(token);
         } catch (NumberFormatException e) {
             int e1 = stack.remove(0);
@@ -50,6 +48,7 @@ public class Worksshop1 {
 
     public static void loopTokens() {
         while (!tokens.isEmpty()) {
+            //System.out.println(tokens);
             readNextToken();
         }
     }

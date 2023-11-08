@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class HelloTest {
@@ -26,7 +25,6 @@ public class HelloTest {
         Hello hello1 = new Hello();
 
     }
-
     @Test
     void itDoesNotWork() {
     }*/
@@ -43,6 +41,8 @@ public class HelloTest {
         expectedOutput.add("20");
         expectedOutput.add("2");
         expectedOutput.add("+");
+        //System.out.println(expectedOutput);
+        //System.out.println(Worksshop1.tokens);
         assertEquals(expectedOutput,Worksshop1.tokens);
     }
 
@@ -52,7 +52,6 @@ public class HelloTest {
         Worksshop1.enterInputString("20 2 +");
 
         Worksshop1.splitInput();
-
         for (String str : Worksshop1.tokens) {
             try {
                 int token = Integer.parseInt(str);
@@ -61,6 +60,37 @@ public class HelloTest {
         }
     }
 
+    @Test
+    void itWorks() {
+        Worksshop1.initiateStack();
+        Worksshop1.enterInputString("2 3 +");
+        Worksshop1.splitInput();
+
+        //Worksshop1.loopTokens();
+        /*
+        Integer value = Integer.valueOf(5);
+        assertEquals(value, Worksshop1.stack.get(0));
+        */
+
+    }
+
+
 
     //DOES NOT WORK
+    @Test
+    void test_if_the_enterInputString_correct() {
+        Worksshop1.initiateStack();
+        Worksshop1.enterInputString("10 +");
+
+        Worksshop1.splitInput();
+
+        ArrayList<String> expectedOutput = new ArrayList<>();
+        expectedOutput.add("10");
+        expectedOutput.add("2");
+        expectedOutput.add("+");
+        //System.out.println(expectedOutput);
+        //System.out.println(Worksshop1.tokens);
+        assertNotEquals(expectedOutput,Worksshop1.tokens);
+    }
+
 }
