@@ -2,12 +2,13 @@ package info.dmerej;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Worksshop1 {
     public static ArrayList<Integer> stack;
     public static String inputString;
-    public static ArrayList<String> tokens;
+    public static List<String> tokens;
     public static void initiateStack() {
         stack = new ArrayList<Integer>();
     }
@@ -16,7 +17,7 @@ public class Worksshop1 {
     }
 
     public static void splitInput() {
-        tokens = (ArrayList<String>) Arrays.asList(inputString.split(" "));
+        tokens = Arrays.asList(inputString.split(" "));
     }
 
     public static void readNextToken() {
