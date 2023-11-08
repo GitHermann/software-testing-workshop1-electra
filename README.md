@@ -1,5 +1,7 @@
-# TDD starter
+# Workshop1 (SE1)
 
-A project that allows me to quickly make demos about TDD, in many languages.
-
-I know many of those starter projects exist, but I prefer to have my own.
+---------- Team Electra ----------
+BERNARD Benjamin
+BILLY-GAGNAIRE Baptiste
+FENG Huiting
+HUANG Hermann
