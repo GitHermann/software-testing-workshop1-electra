@@ -3,6 +3,7 @@ package info.dmerej;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 public class Worksshop1 {
     public static ArrayList<Integer> stack;
     public static String inputString;
@@ -44,5 +45,9 @@ public class Worksshop1 {
         while (!tokens.isEmpty()) {
             readNextToken();
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Hello World");
     }
 }
