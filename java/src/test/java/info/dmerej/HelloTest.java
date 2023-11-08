@@ -46,6 +46,7 @@ public class HelloTest {
         Worksshop1.splitInput();
     }
 
+
     @Test
     void test_if_the_split_works() {
         initiateTest2();
@@ -95,6 +96,23 @@ public class HelloTest {
         assertEquals(10,Worksshop1.stack.get(0));
     }
 
+    @Test
+    void test_minus_op(){
+        Worksshop1.initiateStack();
+        Worksshop1.enterInputString("20 2 -");
+
+        Worksshop1.splitInput();
+        assertEquals(18,Worksshop1.stack.get(0));
+    }
+
+    @Test
+    void test_multiplication_op(){
+        Worksshop1.initiateStack();
+        Worksshop1.enterInputString("20 2 *");
+
+        Worksshop1.splitInput();
+        assertEquals(40,Worksshop1.stack.get(0));
+    }
 
 
     //DOES NOT WORK
@@ -109,13 +127,11 @@ public class HelloTest {
         expectedOutput.add("10");
         expectedOutput.add("2");
         expectedOutput.add("+");
-        //System.out.println(expectedOutput);
-        //System.out.println(Worksshop1.tokens);
         assertNotEquals(expectedOutput,Worksshop1.tokens);
     }
 
     @Test
-    void test_if_the_enterInputString_correct_bis() {
+    void test_if_the_askUserInput_correct_bis() {
         Worksshop1.initiateStack();
         Worksshop1.enterInputString("10 2");
 
@@ -125,8 +141,6 @@ public class HelloTest {
         expectedOutput.add("10");
         expectedOutput.add("2");
         expectedOutput.add("+");
-        //System.out.println(expectedOutput);
-        //System.out.println(Worksshop1.tokens);
         assertNotEquals(expectedOutput,Worksshop1.tokens);
     }
 
