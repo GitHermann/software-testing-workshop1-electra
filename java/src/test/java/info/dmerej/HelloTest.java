@@ -32,12 +32,15 @@ public class HelloTest {
     }*/
 
     //WORKS
-    @Test
-    void test_if_the_split_works() {
+    private static void initiateTest1() {
         Worksshop1.initiateStack();
         Worksshop1.enterInputString("20 2 +");
 
         Worksshop1.splitInput();
+    }
+    @Test
+    void test_if_the_split_works() {
+        initiateTest1();
 
         List<String> expectedOutput = new ArrayList<>();
         expectedOutput.add("20");
@@ -48,10 +51,7 @@ public class HelloTest {
 
     @Test
     void check_if_all_natural_numbers() {
-        Worksshop1.initiateStack();
-        Worksshop1.enterInputString("20 2 +");
-
-        Worksshop1.splitInput();
+        initiateTest1();
 
         for (String str : Worksshop1.tokens) {
             try {
@@ -63,16 +63,20 @@ public class HelloTest {
 
     @Test
     void all_tokens_separated_by_one_space() {
-        Worksshop1.initiateStack();
-        Worksshop1.enterInputString("20 2 +");
-
-        Worksshop1.splitInput();
+        initiateTest1();
 
         for (String str : Worksshop1.tokens) {
             assertFalse(str.contains(" ")|| str.isEmpty());
         }
     }
 
+    @Test
+    void test_if_read_next_token_works() {
+        initiateTest1();
+
+        Worksshop1.readNextToken();
+        assertEquals(20,Worksshop1.stack.get(0));
+    }
 
     //DOES NOT WORK
     @Test
