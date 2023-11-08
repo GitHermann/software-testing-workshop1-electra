@@ -41,7 +41,7 @@ public class HelloTest {
     }
     private static void initiateTest2() {
         Worksshop1.initiateStack();
-        Worksshop1.enterInputString("20 2 + 3 + sqrt 2 *");
+        Worksshop1.enterInputString("20 2 + 3 + sqrt 2 * 5 2 max");
 
         Worksshop1.splitInput();
     }
@@ -50,7 +50,7 @@ public class HelloTest {
     void test_if_the_split_works() {
         initiateTest2();
 
-        List<String> expectedOutput = new ArrayList<>(Arrays.asList("20", "2", "+", "3", "+", "sqrt", "2", "*"));
+        List<String> expectedOutput = new ArrayList<>(Arrays.asList("20", "2", "+", "3", "+", "sqrt", "2", "*", "5", "2", "max"));
         assertEquals(expectedOutput,Worksshop1.tokens);
     }
 
