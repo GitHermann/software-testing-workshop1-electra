@@ -3,6 +3,7 @@ package info.dmerej;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Worksshop1 {
@@ -53,9 +54,29 @@ public class Worksshop1 {
         }
     }
 
+    public static void askUserInput(){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter an expression (only natural numbers, all tokens separated by exactly one space): ");
+        //String str= sc.nextLine();
+        System.out.print("You have entered: "+str);
+        if (str != null && !str.isEmpty()) {
+            enterInputString(str);
+        }
+        else{
+            System.out.println("Cannot enter an empty expression");
+
+        }
+        String str = "";
+        while (str == null && ) {
+
+        }
+
+    }
+
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        //System.out.println("Hello World");
         //enterInputString("2 2 -");
         //splitInput();
+        askUserInput();
     }
 }

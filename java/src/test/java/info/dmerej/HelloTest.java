@@ -76,11 +76,29 @@ public class HelloTest {
 
 
 
+
+
     //DOES NOT WORK
     @Test
-    void test_if_the_enterInputString_correct() {
+    void test_if_the_enterInputString_correct_with_two_op() {
         Worksshop1.initiateStack();
         Worksshop1.enterInputString("10 +");
+
+        Worksshop1.splitInput();
+
+        ArrayList<String> expectedOutput = new ArrayList<>();
+        expectedOutput.add("10");
+        expectedOutput.add("2");
+        expectedOutput.add("+");
+        //System.out.println(expectedOutput);
+        //System.out.println(Worksshop1.tokens);
+        assertNotEquals(expectedOutput,Worksshop1.tokens);
+    }
+
+    @Test
+    void test_if_the_enterInputString_correct_bis() {
+        Worksshop1.initiateStack();
+        Worksshop1.enterInputString("10 2");
 
         Worksshop1.splitInput();
 
