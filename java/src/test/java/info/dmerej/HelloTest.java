@@ -136,6 +136,18 @@ public class HelloTest {
         assertEquals(10,Worksshop1.stack.get(0));
     }
 
+    @Test
+    void test_sqrt_and_op_input() {
+        Worksshop1.initiateStack();
+        Worksshop1.enterInputString("14 2 + 9 sqrt +");
+
+        Worksshop1.splitInput();
+        Worksshop1.loopTokens();
+
+
+        assertEquals(19,Worksshop1.stack.get(0));
+    }
+
 
     //DOES NOT WORK
     @Test
@@ -165,5 +177,7 @@ public class HelloTest {
         expectedOutput.add("+");
         assertNotEquals(expectedOutput,Worksshop1.tokens);
     }
+
+
 
 }
