@@ -13,10 +13,12 @@ public class Worksshop1 {
     }
     public static void enterInputString(String str) {
         inputString = str;
+        //System.out.println(inputString);
     }
 
     public static void splitInput() {
         tokens = (ArrayList<String>) Arrays.asList(inputString.split(" "));
+        System.out.println(tokens);
     }
 
     public static void readNextToken() {
@@ -49,5 +51,7 @@ public class Worksshop1 {
 
     public static void main(String[] args) {
         System.out.println("Hello World");
+        //enterInputString("2 2 -");
+        //splitInput();
     }
 }
