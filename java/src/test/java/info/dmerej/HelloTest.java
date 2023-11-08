@@ -102,6 +102,7 @@ public class HelloTest {
         Worksshop1.enterInputString("20 2 -");
 
         Worksshop1.splitInput();
+        Worksshop1.loopTokens();
         assertEquals(18,Worksshop1.stack.get(0));
     }
 
@@ -111,7 +112,28 @@ public class HelloTest {
         Worksshop1.enterInputString("20 2 *");
 
         Worksshop1.splitInput();
+        Worksshop1.loopTokens();
         assertEquals(40,Worksshop1.stack.get(0));
+    }
+
+    @Test
+    void test_sqrt_op(){
+        Worksshop1.initiateStack();
+        Worksshop1.enterInputString("9 sqrt");
+
+        Worksshop1.splitInput();
+        Worksshop1.loopTokens();
+        assertEquals(3,Worksshop1.stack.get(0));
+    }
+
+    @Test
+    void test_max_op(){
+        Worksshop1.initiateStack();
+        Worksshop1.enterInputString("10 2 3 8 max");
+
+        Worksshop1.splitInput();
+        Worksshop1.loopTokens();
+        assertEquals(10,Worksshop1.stack.get(0));
     }
 
 
