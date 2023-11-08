@@ -76,6 +76,18 @@ public class HelloTest {
 
         Worksshop1.readNextToken();
         assertEquals(20,Worksshop1.stack.get(0));
+        Worksshop1.readNextToken();
+        assertEquals(2,Worksshop1.stack.get(1));
+        Worksshop1.readNextToken();
+        assertEquals(22,Worksshop1.stack.get(0));
+    }
+
+    @Test
+    void test_final_loop() {
+        initiateTest1();
+
+        Worksshop1.loopTokens();
+        assertEquals(22,Worksshop1.stack.get(0));
     }
 
     //DOES NOT WORK
