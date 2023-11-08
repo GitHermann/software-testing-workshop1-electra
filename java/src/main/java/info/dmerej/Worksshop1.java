@@ -52,29 +52,28 @@ public class Worksshop1 {
         }
     }
 
-    public static void askUserInput(){
-        Scanner sc= new Scanner(System.in);
-        System.out.print("Enter an expression (only natural numbers, all tokens separated by exactly one space): ");
-        //String str= sc.nextLine();
-        System.out.print("You have entered: "+str);
-        if (str != null && !str.isEmpty()) {
-            enterInputString(str);
-        }
-        else{
-            System.out.println("Cannot enter an empty expression");
-
-        }
+    public static String askUserInput(){
         String str = "";
-        while (str == null && ) {
-
+        while (str.isEmpty()) {
+            Scanner sc= new Scanner(System.in);
+            System.out.print("Enter an expression (only natural numbers, all tokens separated by exactly one space): ");
+            str= sc.nextLine();
+            if (str != null && !str.isEmpty()) {
+                System.out.print("You have entered: "+str);
+                enterInputString(str);
+                break;
+            }
+            else{
+                System.out.println("Error: You cannot enter an empty expression.");
+            }
         }
-
+        return str;
     }
 
     public static void main(String[] args) {
-        //System.out.println("Hello World");
+        System.out.println("Hello World");
         //enterInputString("2 2 -");
         //splitInput();
-        askUserInput();
+        //System.out.println(askUserInput());
     }
 }

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/java/hello.iml" filepath="$PROJECT_DIR$/java/hello.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/software-testing-workshop1-electra.iml" filepath="$PROJECT_DIR$/.idea/software-testing-workshop1-electra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spock-example.iml" filepath="$PROJECT_DIR$/.idea/modules/spock-example.iml" />
     </modules>
   </component>
 </project>

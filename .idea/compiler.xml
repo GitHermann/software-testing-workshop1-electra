@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="19">
       <module name="groovy" target="1.5" />
+      <module name="hello" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
