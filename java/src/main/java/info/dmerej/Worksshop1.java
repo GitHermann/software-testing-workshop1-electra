@@ -26,5 +26,23 @@ public class Worksshop1 {
         } catch (NumberFormatException e) {
             int e1 = stack.remove(0);
             int e2 = stack.remove(0);
+            switch (token) {
+                case "+":
+                    stack.add(e1+e2);
+                    break;
+                case "-":
+                    stack.add((e1-e2));
+                    break;
+                case "*":
+                    stack.add((e1*e2));
+                    break;
+            }
+        }
     }
-}}
+
+    public static void loopTokens() {
+        while (!tokens.isEmpty()) {
+            readNextToken();
+        }
+    }
+}
