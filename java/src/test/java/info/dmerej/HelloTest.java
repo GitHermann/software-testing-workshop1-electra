@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -38,14 +39,18 @@ public class HelloTest {
 
         Worksshop1.splitInput();
     }
+    private static void initiateTest2() {
+        Worksshop1.initiateStack();
+        Worksshop1.enterInputString("20 2 + 3 + sqrt 2 *");
+
+        Worksshop1.splitInput();
+    }
+
     @Test
     void test_if_the_split_works() {
-        initiateTest1();
+        initiateTest2();
 
-        List<String> expectedOutput = new ArrayList<>();
-        expectedOutput.add("20");
-        expectedOutput.add("2");
-        expectedOutput.add("+");
+        List<String> expectedOutput = new ArrayList<>(Arrays.asList("20", "2", "+", "3", "+", "sqrt", "2", "*"));
         assertEquals(expectedOutput,Worksshop1.tokens);
     }
 
@@ -84,10 +89,10 @@ public class HelloTest {
 
     @Test
     void test_final_loop() {
-        initiateTest1();
+        initiateTest2();
 
         Worksshop1.loopTokens();
-        assertEquals(22,Worksshop1.stack.get(0));
+        assertEquals(10,Worksshop1.stack.get(0));
     }
 
 

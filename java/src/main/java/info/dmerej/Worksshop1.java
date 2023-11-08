@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 
 public class Worksshop1 {
-    public static ArrayList<Integer> stack;
+    public static ArrayList<Double> stack;
     public static String inputString;
     public static List<String> tokens;
     public static void initiateStack() {
-        stack = new ArrayList<Integer>();
+        stack = new ArrayList<Double>();
     }
     public static void enterInputString(String str) {
         inputString = str;
@@ -27,21 +27,30 @@ public class Worksshop1 {
         String token = null;
         try {
             token = tokens.remove(0);
-            Integer parsedInt = Integer.parseInt(token);
-            stack.add(parsedInt);
+            Double parsedDouble = Double.parseDouble(token);
+            stack.add(parsedDouble);
         } catch (NumberFormatException e) {
-            int e1 = stack.remove(0);
-            int e2 = stack.remove(0);
             switch (token) {
                 case "+":
-                    stack.add(e1+e2);
+                    stack.add(stack.remove(0)+stack.remove(0));
                     break;
                 case "-":
-                    stack.add((e1-e2));
+                    stack.add(stack.remove(0)-stack.remove(0));
                     break;
                 case "*":
-                    stack.add((e1*e2));
+                    stack.add(stack.remove(0)*stack.remove(0));
                     break;
+                case "sqrt":
+                    stack.add(Math.sqrt(stack.remove(stack.size()-1)));
+                    break;
+                case "max":
+                    double max = stack.get(0);
+                    for(double d : stack) {
+                        if (d>max) {
+                            max = d;
+                        }
+                    }
+                    stack.set(0,max);
             }
         }
     }
